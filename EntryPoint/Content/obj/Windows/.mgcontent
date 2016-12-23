@@ -4,6 +4,6 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Johan Bos/Documents/Johan/School/Informatica/Jaar 3/OP2/DEV02-6A/Framework/EntryPoint/Content/numberingFont.spritefont</File>
+    <File>C:/Github/DEV02-6A/EntryPoint/Content/numberingFont.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>

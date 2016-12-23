@@ -74,3 +74,41 @@ D:\Johan Bos\Documents\Johan\School\Informatica\Jaar 3\OP2\DEV02-6A\Framework\En
 D:\Johan Bos\Documents\Johan\School\Informatica\Jaar 3\OP2\DEV02-6A\Framework\EntryPoint\bin\Windows\Debug\SharpDX.RawInput.xml
 D:\Johan Bos\Documents\Johan\School\Informatica\Jaar 3\OP2\DEV02-6A\Framework\EntryPoint\bin\Windows\Debug\SharpDX.Direct3D9.xml
 D:\Johan Bos\Documents\Johan\School\Informatica\Jaar 3\OP2\DEV02-6A\Framework\EntryPoint\obj\x86\Debug\EntryPoint.csprojResolveAssemblyReference.cache
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\EntryPoint.exe.config
+C:\Github\DEV02-6A\EntryPoint\obj\x86\Debug\EntryPoint.exe
+C:\Github\DEV02-6A\EntryPoint\obj\x86\Debug\EntryPoint.pdb
+C:\Github\DEV02-6A\EntryPoint\obj\x86\Debug\EntryPoint.csprojResolveAssemblyReference.cache
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\Content\circle.png
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\Content\crosshair.png
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\Content\crosshairs.png
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\Content\lighting.png
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\Content\linearGlow.png
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\Content\roads.jpg
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\Content\tileset.png
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\Content\numberingFont.xnb
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\EntryPoint.exe
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\EntryPoint.pdb
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\FSharp.Core.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\Game.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\Game.pdb
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\FSharp.Core.xml
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.xml
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Github\DEV02-6A\EntryPoint\bin\Windows\Debug\SharpDX.Direct3D9.xml

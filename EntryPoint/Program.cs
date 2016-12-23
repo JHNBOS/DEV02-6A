@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -39,25 +40,51 @@ namespace EntryPoint
             goto read_input;
         }
 
+        //Assignment 1
         private static IEnumerable<Vector2> SortSpecialBuildingsByDistance(Vector2 house, IEnumerable<Vector2> specialBuildings)
         {
             //return specialBuildings.OrderBy(v => Vector2.Distance(v, house));
 
             Vector2[] array = specialBuildings.ToArray();
-            MergeSort(house, array, 0, (array.Length-1));
+            MergeSort(house, array, 0, (array.Length - 1));
             return array;
         }
 
+        //Assignment 2
         private static IEnumerable<IEnumerable<Vector2>> FindSpecialBuildingsWithinDistanceFromHouse(
-          IEnumerable<Vector2> specialBuildings,
-          IEnumerable<Tuple<Vector2, float>> housesAndDistances)
+          IEnumerable<Vector2> specialBuildings, IEnumerable<Tuple<Vector2, float>> housesAndDistances)
         {
+            /*
             return
-                from h in housesAndDistances
-                select
-                  from s in specialBuildings
-                  where Vector2.Distance(h.Item1, s) <= h.Item2
-                  select s;
+            from h in housesAndDistances
+            select
+            from s in specialBuildings
+            where Vector2.Distance(h.Item1, s) <= h.Item2
+            select s;
+            */
+
+            List<Vector2> rangeList = new List<Vector2>();
+            List<List<Vector2>> returnList = new List<List<Vector2>>();
+
+            _2DTree kdTree = new _2DTree();
+
+            List<Vector2> specialBuildingsList = specialBuildings.ToList();
+            List<Tuple<Vector2, float>> housesList = housesAndDistances.ToList();
+
+            foreach (var t in housesList)
+            {
+                Console.WriteLine("House[" + t.Item1.X + ", " + t.Item1.Y + "]");
+                Console.WriteLine("Radius: " + t.Item2);
+
+                kdTree.Insert(t.Item1);
+
+                rangeList =  kdTree.RangeSearch(t.Item1, t.Item2, specialBuildingsList);
+            }
+
+            returnList.Add(rangeList);
+
+
+            return returnList;
         }
 
         private static IEnumerable<Tuple<Vector2, Vector2>> FindRoute(Vector2 startingBuilding,
@@ -136,8 +163,8 @@ namespace EntryPoint
             }
 
         }
-        
-        
+
+
         //Assignment 1: Merge Sort (Divide and conquer)
         private static IEnumerable<Vector2> MergeSort(Vector2 house, Vector2[] array, int left, int right)
         {
@@ -156,7 +183,10 @@ namespace EntryPoint
             return array;
         }
 
+        //Assignment 3: Dijkstra
 
-    }
+
+
+        }
 #endif
 }

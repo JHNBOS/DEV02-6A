@@ -1,2 +1,29 @@
 D:\Johan Bos\Documents\Johan\School\Informatica\Jaar 3\OP2\DEV02-6A\INFDEV01-6A-master\INFDEV01-6A-master\Sources\Assignment\Main\bin\Debug\Main.XML
 D:\Johan Bos\Documents\Johan\School\Informatica\Jaar 3\OP2\DEV02-6A\Framework\Main\bin\Debug\Main.XML
+C:\Github\DEV02-6A\Main\bin\Debug\Main.XML
+C:\Github\DEV02-6A\Main\bin\Debug\Game.dll
+C:\Github\DEV02-6A\Main\bin\Debug\Game.pdb
+C:\Github\DEV02-6A\Main\bin\Debug\FSharp.Core.dll
+C:\Github\DEV02-6A\Main\bin\Debug\MonoGame.Framework.dll
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.MediaFoundation.dll
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.dll
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.XAudio2.dll
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.DXGI.dll
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.Direct3D11.dll
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.Direct2D1.dll
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.XInput.dll
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.RawInput.dll
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.Direct3D9.dll
+C:\Github\DEV02-6A\Main\bin\Debug\MonoGame.Framework.xml
+C:\Github\DEV02-6A\Main\bin\Debug\FSharp.Core.xml
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.MediaFoundation.xml
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.xml
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.XAudio2.xml
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.DXGI.xml
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.Direct3D11.xml
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.Direct2D1.xml
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.XInput.xml
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.RawInput.xml
+C:\Github\DEV02-6A\Main\bin\Debug\SharpDX.Direct3D9.xml
+C:\Github\DEV02-6A\Main\obj\Debug\Game.dll
+C:\Github\DEV02-6A\Main\obj\Debug\Game.pdb
