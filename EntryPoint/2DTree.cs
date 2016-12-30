@@ -17,7 +17,7 @@ namespace EntryPoint
         public void Insert(Vector2 value, bool isVertical = true)
         {
             //Check if Value is null
-            if (Value == new Vector2(0, 0))
+            if (Value == null)
             {
                 Value = value;
             }
@@ -51,8 +51,6 @@ namespace EntryPoint
                     current = Right;
                 }
 
-                //Insert value to 2DTree
-                //current.Insert(value, !isVertical);
             }
         }
 
@@ -123,40 +121,29 @@ namespace EntryPoint
             float X = Source.X;
             float Y = Source.Y;
 
-            Console.WriteLine("X=" + X);
-            Console.WriteLine("Y=" + Y);
-
             //Limits of the rectangle
             float leftBorder = (X - radius);
             float rightBorder = (X + radius);
             float topBorder = (Y + radius);
             float bottomBorder = (Y - radius);
 
-            Console.WriteLine("Left=" + leftBorder);
-            Console.WriteLine("Right=" + rightBorder);
-            Console.WriteLine("Top=" + topBorder);
-            Console.WriteLine("Bottom=" + bottomBorder);
+            //Sort list by x value
+            Points.OrderBy(p => p.X);
 
             //Check which points in the list are within radius of the source
             foreach (var vector in Points)
             {
-                //Check if the vector in the list is between the outmost X values
-                //(top and bottom are the same X value)
-                if (vector.X >= leftBorder && vector.X <= rightBorder)
+                //Check if the vector in the list is between the outmost XY values
+                if ((vector.X >= leftBorder && vector.X <= rightBorder) 
+                    && (vector.Y >= bottomBorder && vector.Y <= topBorder))
                 {
-                    //Check if the vector in the list is between the outmost Y values
-                    //(top two are the same y as the bottom two are the same)
-                    if (vector.Y >= bottomBorder && vector.Y <= topBorder)
-                    {
-                        float distance = Vector2.Distance(vector, Source);
 
-                        if (distance < radius)
-                        {
-                            Console.WriteLine("Distance=" + Vector2.Distance(vector, Source));
-                            Console.WriteLine("Special Building[" + vector.X + ", " + vector.Y + "]");
-                            buildingsWithinRange.Add(vector);
-                        }
-                        
+                    float distance = Vector2.Distance(vector, Source);
+
+                    //Euclidean check
+                    if (distance <= radius)
+                    {
+                        buildingsWithinRange.Add(vector);
                     }
                 }
             }
