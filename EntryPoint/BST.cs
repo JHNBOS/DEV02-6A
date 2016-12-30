@@ -90,7 +90,7 @@ namespace EntryPoint
 
         }
 
-
+        //Print root value first, then print the left tree and then right tree
         public void PrintPreOrder(BST tree)
         {
             if (tree != null)

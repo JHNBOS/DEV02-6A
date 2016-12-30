@@ -72,12 +72,15 @@ namespace EntryPoint
             //Lists of specialBuildings and houses
             List<Vector2> specialBuildingsList = specialBuildings.ToList();
             List<Tuple<Vector2, float>> housesList = housesAndDistances.ToList();
-
+            
+            //Insert vector2 of specialBuildings into the kd tree
             foreach (var s in specialBuildingsList)
             {
                 kdTree.Insert(s);
             }
 
+            //Perform a rangesearch for each house with the maximum distance 
+            //for searching special buildings within radius
             foreach (var t in housesList)
             {
                 Console.WriteLine("House[" + t.Item1.X + ", " + t.Item1.Y + "]");
@@ -186,7 +189,6 @@ namespace EntryPoint
             return array;
         }
 
-        //Assignment 3: Dijkstra
 
 
 
