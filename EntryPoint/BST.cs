@@ -10,9 +10,14 @@ namespace EntryPoint
 {
     public class BST
     {
-        public int Value { get; set; }
-        public BST Left { get; set; }
-        public BST Right { get; set; }
+        public int Value;
+        public BST Left;
+        public BST Right;
+
+        public BST(int value)
+        {
+            Value = value;
+        }
 
         public bool Search(BST tree, int value)
         {
@@ -45,12 +50,12 @@ namespace EntryPoint
         }
 
 
-        public BST Insert(BST tree, int value)
+        public void Insert(BST tree, int value)
         {
             //Check if tree is empty
             if (tree == null)
             {
-                Insert(tree, value);
+                tree = new BST(value);
             }
 
             //If value lower than current value
@@ -59,11 +64,8 @@ namespace EntryPoint
                 //Go left
                 if (tree.Left == null)
                 {
-                    BST newTree = new BST();
-                    newTree.Value = value;
+                    BST newTree = new BST(value);
                     tree.Left = newTree;
-
-                    return newTree;
                 }
                 else
                 {
@@ -77,11 +79,8 @@ namespace EntryPoint
                 //Go right
                 if (tree.Right == null)
                 {
-                    BST newTree = new BST();
-                    newTree.Value = value;
+                    BST newTree = new BST(value);
                     tree.Right = newTree;
-
-                    return newTree;
                 }
                 else
                 {
@@ -89,11 +88,18 @@ namespace EntryPoint
                 }
             }
 
-            return tree;
-
         }
 
 
+        public void PrintPreOrder(BST tree)
+        {
+            if (tree != null)
+            {
+                Console.WriteLine(tree.Value + ", ");
+                PrintPreOrder(tree.Left);
+                PrintPreOrder(tree.Right);
+            }
+        }
 
     }
 }

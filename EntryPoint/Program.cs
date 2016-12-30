@@ -63,28 +63,30 @@ namespace EntryPoint
             select s;
             */
 
+            _2DTree kdTree = new _2DTree();
+            _2DTree specialTree = new _2DTree();
+
             List<Vector2> rangeList = new List<Vector2>();
             List<List<Vector2>> returnList = new List<List<Vector2>>();
 
-            _2DTree kdTree = new _2DTree();
-
             List<Vector2> specialBuildingsList = specialBuildings.ToList();
             List<Tuple<Vector2, float>> housesList = housesAndDistances.ToList();
+
+            foreach (var s in specialBuildingsList)
+            {
+                kdTree.Insert(s);
+            }
 
             foreach (var t in housesList)
             {
                 Console.WriteLine("House[" + t.Item1.X + ", " + t.Item1.Y + "]");
                 Console.WriteLine("Radius: " + t.Item2);
 
-                kdTree.Insert(t.Item1);
-
-                rangeList =  kdTree.RangeSearch(t.Item1, t.Item2, specialBuildingsList);
+                returnList.Add(kdTree.RangeSearch(t.Item1, t.Item2, specialBuildingsList));
             }
 
-            returnList.Add(rangeList);
-
-
             return returnList;
+            
         }
 
         private static IEnumerable<Tuple<Vector2, Vector2>> FindRoute(Vector2 startingBuilding,

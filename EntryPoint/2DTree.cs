@@ -113,6 +113,11 @@ namespace EntryPoint
         {
             List<Vector2> buildingsWithinRange = new List<Vector2>();
 
+            if (Value == null)
+            {
+                return buildingsWithinRange;
+            }
+
             //Get outermost points of radius from the source node
             //X and Y coordinates from source node
             float X = Source.X;
@@ -140,7 +145,7 @@ namespace EntryPoint
                 if (vector.X >= leftBorder && vector.X <= rightBorder)
                 {
                     //Check if the vector in the list is between the outmost Y values
-                    //(top twoare the same y as the bottom two are the same)
+                    //(top two are the same y as the bottom two are the same)
                     if (vector.Y >= bottomBorder && vector.Y <= topBorder)
                     {
                         float distance = Vector2.Distance(vector, Source);
