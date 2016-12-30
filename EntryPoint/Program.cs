@@ -63,12 +63,13 @@ namespace EntryPoint
             select s;
             */
 
+            //KDTree
             _2DTree kdTree = new _2DTree();
-            _2DTree specialTree = new _2DTree();
 
-            List<Vector2> rangeList = new List<Vector2>();
+            //Return list
             List<List<Vector2>> returnList = new List<List<Vector2>>();
 
+            //Lists of specialBuildings and houses
             List<Vector2> specialBuildingsList = specialBuildings.ToList();
             List<Tuple<Vector2, float>> housesList = housesAndDistances.ToList();
 
