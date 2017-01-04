@@ -6,26 +6,29 @@ using System.Threading.Tasks;
 
 namespace EntryPoint
 {
-    class Dijkstra
+    public class Dijkstra
     {
         public Graph Graph;
-        public Vertex Source;
 
-        public Dijkstra(Graph g, Vertex v)
+        public Dijkstra(Graph graph)
         {
-            this.Graph = g;
-            this.Source = v;
+            this.Graph = graph;
         }
 
-        public void Calculate()
+        public List<Vertex> CalculateShortestPath(Vertex toEdge)
         {
-            List<Vertex> unvisited = new List<Vertex>();
+            List<Vertex> Vertices = new List<Vertex>();
 
-            foreach (var v in this.Graph.Vertices)
+            while (toEdge.Previous != null)
             {
-                unvisited.Add(v);
+                Vertices.Insert(0, toEdge);
+                toEdge = toEdge.Previous;
             }
+
+            Vertices.Insert(0, toEdge);
+
+            return Vertices;
         }
-      
+
     }
 }

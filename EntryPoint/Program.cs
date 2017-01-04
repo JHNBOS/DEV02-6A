@@ -63,6 +63,7 @@ namespace EntryPoint
             select s;
             */
 
+
             //KDTree
             _2DTree kdTree = new _2DTree();
 
@@ -93,9 +94,11 @@ namespace EntryPoint
             
         }
 
+        //Assignment 3
         private static IEnumerable<Tuple<Vector2, Vector2>> FindRoute(Vector2 startingBuilding,
           Vector2 destinationBuilding, IEnumerable<Tuple<Vector2, Vector2>> roads)
         {
+            /*
             var startingRoad = roads.Where(x => x.Item1.Equals(startingBuilding)).First();
             List<Tuple<Vector2, Vector2>> fakeBestPath = new List<Tuple<Vector2, Vector2>>() { startingRoad };
             var prevRoad = startingRoad;
@@ -105,6 +108,12 @@ namespace EntryPoint
                 fakeBestPath.Add(prevRoad);
             }
             return fakeBestPath;
+            */
+
+            var graph = new Graph(roads.ToList(), startingBuilding, destinationBuilding);
+            var path = graph.ShortestPath(startingBuilding, destinationBuilding);
+
+            return path;
         }
 
         private static IEnumerable<IEnumerable<Tuple<Vector2, Vector2>>> FindRoutesToAll(Vector2 startingBuilding,

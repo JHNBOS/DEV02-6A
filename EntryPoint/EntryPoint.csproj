@@ -48,8 +48,6 @@
     <Compile Include="2DTree.cs" />
     <Compile Include="Dijkstra.cs" />
     <Compile Include="Graph.cs" />
-    <Compile Include="Vertex.cs" />
-    <Compile Include="Path.cs" />
     <Compile Include="BST.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
