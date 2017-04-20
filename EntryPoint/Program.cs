@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -43,10 +42,15 @@ namespace EntryPoint
         //Assignment 1
         private static IEnumerable<Vector2> SortSpecialBuildingsByDistance(Vector2 house, IEnumerable<Vector2> specialBuildings)
         {
+            //ORIGINAL CODE
             //return specialBuildings.OrderBy(v => Vector2.Distance(v, house));
 
+            //NEW CODE
+            Sorting sorting = new Sorting();
             Vector2[] array = specialBuildings.ToArray();
-            MergeSort(house, array, 0, (array.Length - 1));
+
+            sorting.MergeSort(house, array, 0, (array.Length - 1));
+
             return array;
         }
 
@@ -54,7 +58,7 @@ namespace EntryPoint
         private static IEnumerable<IEnumerable<Vector2>> FindSpecialBuildingsWithinDistanceFromHouse(
           IEnumerable<Vector2> specialBuildings, IEnumerable<Tuple<Vector2, float>> housesAndDistances)
         {
-            /*
+            /* ORIGINAL CODE 
             return
             from h in housesAndDistances
             select
@@ -63,7 +67,8 @@ namespace EntryPoint
             select s;
             */
 
-
+            /*----------------------------------------------------------------------------*/
+            /* OLD CODE
             //KDTree
             _2DTree kdTree = new _2DTree();
 
@@ -73,11 +78,11 @@ namespace EntryPoint
             //Lists of specialBuildings and houses
             List<Vector2> specialBuildingsList = specialBuildings.ToList();
             List<Tuple<Vector2, float>> housesList = housesAndDistances.ToList();
-            
+
             //Insert vector2 of specialBuildings into the kd tree
             foreach (var s in specialBuildingsList)
             {
-                kdTree.Insert(s);
+                tree.Insert(s, false);
             }
 
             //Perform a rangesearch for each house with the maximum distance 
@@ -87,18 +92,53 @@ namespace EntryPoint
                 Console.WriteLine("House[" + t.Item1.X + ", " + t.Item1.Y + "]");
                 Console.WriteLine("Radius: " + t.Item2);
 
-                returnList.Add(kdTree.RangeSearch(t.Item1, t.Item2, specialBuildingsList));
+                Node n = new Node(t.Item1);
+
+                returnList.Add(tree.RangeSearch(t.Item1, t.Item2, specialBuildingsList));
             }
 
             return returnList;
-            
+            */
+
+            /*----------------------------------------------------------------------------*/
+
+            //Tree
+            Tree tree = new Tree();
+
+            //Return list
+            List<List<Vector2>> returnList = new List<List<Vector2>>();
+
+            //Lists of specialBuildings and houses
+            List<Vector2> specialBuildingsList = specialBuildings.ToList();
+            List<Tuple<Vector2, float>> housesList = housesAndDistances.ToList();
+
+            //Insert vector2 of specialBuildings into the kd tree
+            foreach (var s in specialBuildingsList)
+            {
+                tree.Root.Insert(s, false);
+            }
+
+            //Perform a rangesearch for each house with the maximum distance 
+            //for searching special buildings within radius
+            foreach (var t in housesList)
+            {
+                Console.WriteLine("House[" + t.Item1.X + ", " + t.Item1.Y + "]");
+                Console.WriteLine("Radius: " + t.Item2);
+
+                Node n = new Node(t.Item1);
+
+                returnList.Add(tree.Root.RangeSearch(n, t.Item2, specialBuildingsList));
+            }
+
+            return returnList;
         }
+
 
         //Assignment 3
         private static IEnumerable<Tuple<Vector2, Vector2>> FindRoute(Vector2 startingBuilding,
           Vector2 destinationBuilding, IEnumerable<Tuple<Vector2, Vector2>> roads)
         {
-            /*
+            /* ORIGINAL CODE
             var startingRoad = roads.Where(x => x.Item1.Equals(startingBuilding)).First();
             List<Tuple<Vector2, Vector2>> fakeBestPath = new List<Tuple<Vector2, Vector2>>() { startingRoad };
             var prevRoad = startingRoad;
@@ -110,12 +150,17 @@ namespace EntryPoint
             return fakeBestPath;
             */
 
+            /*----------------------------------------------------------------------------*/
+
+            //NEW CODE
             var graph = new Graph(roads.ToList(), startingBuilding, destinationBuilding);
             var path = graph.ShortestPath(startingBuilding, destinationBuilding);
 
             return path;
         }
 
+
+        //Assignment 4
         private static IEnumerable<IEnumerable<Tuple<Vector2, Vector2>>> FindRoutesToAll(Vector2 startingBuilding,
           IEnumerable<Vector2> destinationBuildings, IEnumerable<Tuple<Vector2, Vector2>> roads)
         {
@@ -135,72 +180,9 @@ namespace EntryPoint
             return result;
         }
 
-        //Assignment 1: Insertion Sort
-        private static void DoMerge(Vector2 house, Vector2[] array, int left, int middle, int right)
-        {
-            Vector2[] temp = new Vector2[array.Length];
 
-            int i;
-            int l_e;
-            int num;
-            int pos;
+        /*--------------------------------------------------------------------------------------------------*/
 
-            l_e = (middle - 1);
-            pos = left;
-            num = (right - left + 1);
-
-            while ((left <= l_e) && (middle <= right))
-            {
-                if (Vector2.Distance(array[left], house) <= Vector2.Distance(array[middle], house))
-                {
-                    temp[pos++] = array[left++];
-                }
-                else
-                {
-                    temp[pos++] = array[middle++];
-                }
-            }
-
-            while (left <= l_e)
-            {
-                temp[pos++] = array[left++];
-            }
-
-            while (middle <= right)
-            {
-                temp[pos++] = array[middle++];
-            }
-
-            for (i = 0; i < num; i++)
-            {
-                array[right] = temp[right];
-                right--;
-            }
-
-        }
-
-
-        //Assignment 1: Merge Sort (Divide and conquer)
-        private static IEnumerable<Vector2> MergeSort(Vector2 house, Vector2[] array, int left, int right)
-        {
-            int middle;
-
-            if (right > left)
-            {
-                middle = (right + left) / 2;
-
-                MergeSort(house, array, left, middle);
-                MergeSort(house, array, (middle + 1), right);
-
-                DoMerge(house, array, left, (middle + 1), right);
-            }
-
-            return array;
-        }
-
-
-
-
-        }
+    }
 #endif
 }

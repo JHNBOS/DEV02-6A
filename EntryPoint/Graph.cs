@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EntryPoint
 {
@@ -11,13 +9,15 @@ namespace EntryPoint
     {
         public Dictionary<Vector2, Dictionary<Vector2, int>> Vertices;
 
-        private Graph()
+        public Graph()
         {
             Vertices = new Dictionary<Vector2, Dictionary<Vector2, int>>();
         }
 
         public Graph(List<Tuple<Vector2, Vector2>> roads, Vector2 startPoint, Vector2 endPoint)
         {
+            Vertices = new Dictionary<Vector2, Dictionary<Vector2, int>>();
+
             //Add start vertex
             AddVertex(startPoint);
 
@@ -28,7 +28,7 @@ namespace EntryPoint
                 AddVertex(firstVertex);
                 AddVertex(secondVertex);
             }
-            
+
             //Add end vertex
             AddVertex(endPoint);
 
@@ -37,7 +37,7 @@ namespace EntryPoint
             {
                 Vector2 firstVertex = roads[i].Item1;
                 Vector2 secondVertex = roads[i].Item2;
-                int distance = (int) Vector2.Distance(firstVertex, secondVertex);
+                int distance = (int)Vector2.Distance(firstVertex, secondVertex);
 
                 AddRoad(firstVertex, secondVertex, distance);
             }

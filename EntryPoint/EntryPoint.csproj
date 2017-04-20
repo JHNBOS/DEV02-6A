@@ -45,12 +45,16 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="2DTree.cs" />
+    <Compile Include="Old\2DTree.cs" />
     <Compile Include="Dijkstra.cs" />
     <Compile Include="Graph.cs" />
-    <Compile Include="BST.cs" />
+    <Compile Include="Old\BST.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sorting.cs" />
+    <Compile Include="Tree.cs" />
+    <Compile Include="Vertex.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />

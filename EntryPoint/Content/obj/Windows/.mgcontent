@@ -4,6 +4,6 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Github/DEV02-6A/EntryPoint/Content/numberingFont.spritefont</File>
+    <File>C:/GitHub/DEV02-6A/EntryPoint/Content/numberingFont.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>
